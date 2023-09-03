@@ -34,8 +34,8 @@ def main():
             togglePetWindow()
             successCount += 1
             
-            pydirectinput.click(x=777, y=250, button="right")
-            sleep(400, 500)
+            pydirectinput.click(x=1200, y=250, button="right")
+            sleep(2000, 2000)
 
         if (cast):
             print("Casting out lure")
@@ -57,6 +57,8 @@ def main():
                 keyboard.press_and_release('e')
                 cast = True
                 time.sleep(random.uniform(6, 7.5))
+
+                successCount += 1
                 break
 
         time.sleep(0.100)
