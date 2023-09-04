@@ -20,6 +20,7 @@ def main():
     while True:
         # repair
         if successCount % 10 == 0:
+            sleep(5000, 5000)
             togglePetWindow()
 
             pydirectinput.click(x=1245, y=700, button="left")
