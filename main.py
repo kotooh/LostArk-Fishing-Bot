@@ -27,7 +27,7 @@ def main():
         currentTime = datetime.datetime.now()
 
         # repair
-        if successCount % 10 == 0:
+        if successCount % 20 == 0:
             sleep(5000, 5000)
             togglePetWindow()
 
@@ -46,7 +46,7 @@ def main():
             pydirectinput.click(x=fishX, y=fishY, button="right")
             sleep(2000, 2000)
 
-        if cast or currentTime >= lastCastTimestamp + datetime.timedelta(seconds = 30):
+        if cast or currentTime >= lastCastTimestamp + datetime.timedelta(seconds = 25):
             print("Casting out lure")
             keyboard.press_and_release('e')
             cast = False
