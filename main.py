@@ -8,7 +8,8 @@ import datetime
 
 from PIL import ImageGrab
 
-fishX, fishY = 1111, 263
+fishX, fishY = 1111, 263 # candaria
+# fishX, fishY = 1500, 700 # port krona
 
 fishing = cv2.imread('image.png', 0)
 templateWidth, templateHeight = fishing.shape[::-1]
@@ -20,14 +21,14 @@ print("Started!")
 
 def main():
     cast = True
-    successCount = 1
+    castCount = 1
     lastCastTimestamp = None
 
     while True:
         currentTime = datetime.datetime.now()
 
         # repair
-        if successCount % 20 == 0:
+        if castCount % 15 == 0:
             sleep(5000, 5000)
             togglePetWindow()
 
@@ -41,7 +42,7 @@ def main():
             sleep(1000, 1000)
 
             togglePetWindow()
-            successCount += 1
+            castCount += 1
             
             pydirectinput.click(x=fishX, y=fishY, button="right")
             sleep(2000, 2000)
@@ -51,6 +52,7 @@ def main():
             keyboard.press_and_release('e')
             cast = False
             
+            castCount += 1
             lastCastTimestamp = currentTime
             continue
 
@@ -69,7 +71,6 @@ def main():
                 cast = True
                 time.sleep(random.uniform(6, 7.5))
 
-                successCount += 1
                 break
 
         time.sleep(0.500)
