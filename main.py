@@ -8,8 +8,8 @@ import datetime
 
 from PIL import ImageGrab
 
-fishX, fishY = 1111, 263 # candaria
-# fishX, fishY = 1500, 700 # port krona
+fishX, fishY = 1431, 263 # candaria
+# fishX, fishY = 320, 700 # port krona
 
 fishing = cv2.imread('image.png', 0)
 templateWidth, templateHeight = fishing.shape[::-1]
@@ -32,11 +32,11 @@ def main():
             sleep(5000, 5000)
             togglePetWindow()
 
-            pydirectinput.click(x=1245, y=700, button="left")
+            pydirectinput.click(x=1565, y=700, button="left")
             sleep(1000, 1000)
-            pydirectinput.click(x=730, y=800, button="left")
+            pydirectinput.click(x=1050, y=800, button="left")
             sleep(1000, 1000)
-            pydirectinput.click(x=915, y=630, button="left")
+            pydirectinput.click(x=1235, y=630, button="left")
             sleep(1000, 1000)
             pydirectinput.press("esc")
             sleep(1000, 1000)
@@ -56,7 +56,7 @@ def main():
             lastCastTimestamp = currentTime
             continue
 
-        imagePixels = ImageGrab.grab(bbox=(0, 0, 1920, 1080))
+        imagePixels = ImageGrab.grab(bbox=(0, 0, 2560, 1080))
         pixelsNumpy = np.array(imagePixels)
 
         grayscaleImage = cv2.cvtColor(pixelsNumpy, cv2.COLOR_BGR2GRAY)
