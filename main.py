@@ -20,7 +20,7 @@ time.sleep(5)
 print("Started!")
 
 def main():
-    cast = True
+    canCast = True
     castCount = 1
     lastCastTimestamp = None
 
@@ -43,14 +43,15 @@ def main():
 
             togglePetWindow()
             castCount += 1
+            canCast = True
             
             pydirectinput.click(x=fishX, y=fishY, button="right")
             sleep(2000, 2000)
 
-        if cast or currentTime >= lastCastTimestamp + datetime.timedelta(seconds = 25):
+        if canCast or currentTime >= lastCastTimestamp + datetime.timedelta(seconds = 25):
             print("Casting out lure")
             keyboard.press_and_release('e')
-            cast = False
+            canCast = False
             
             castCount += 1
             lastCastTimestamp = currentTime
@@ -68,7 +69,7 @@ def main():
             if point != None:
                 print("Detected catch! Reeling in lure")
                 keyboard.press_and_release('e')
-                cast = True
+                canCast = True
                 time.sleep(random.uniform(6, 7.5))
 
                 break
