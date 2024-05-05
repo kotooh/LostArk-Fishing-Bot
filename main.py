@@ -48,7 +48,7 @@ def main():
             pydirectinput.click(x=fishX, y=fishY, button="right")
             sleep(2000, 2000)
 
-        if canCast or currentTime >= lastCastTimestamp + datetime.timedelta(seconds = 25):
+        if canCast or currentTime >= lastCastTimestamp + datetime.timedelta(seconds = 20):
             print("Casting out lure")
             keyboard.press_and_release('e')
             canCast = False
